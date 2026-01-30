@@ -2,6 +2,18 @@
 
 A fully self-hosted, offline RAG (Retrieval-Augmented Generation) chat application built with LangChain, Ollama, and React. Query your personal documents without sending data to the cloud.
 
+**Your data. Your control. Your privacy.**
+
+## 🔒 Privacy & Control First
+
+This project is built with **data sovereignty** as the core principle:
+
+- **Zero Cloud Uploads** — All documents, embeddings, and conversations stay on your machine. Not a single byte leaves your device.
+- **No Tracking** — No analytics, no telemetry, no third-party services. Complete privacy by default.
+- **Full Ownership** — You own your data, your models, your vector store. Run it your way, modify it, or delete it anytime.
+- **No Vendor Lock-in** — Use any Ollama model. Switch models, embedding models, or vector stores without external dependencies.
+- **Open Source** — Inspect the code, audit security, contribute improvements. No closed-source black boxes.
+
 ## Features
 
 - **100% Local & Offline** — All processing runs on your machine. No API calls, no cloud storage.
@@ -12,6 +24,18 @@ A fully self-hosted, offline RAG (Retrieval-Augmented Generation) chat applicati
 - **RAG Toggle** — Switch between knowledge-base mode and base LLM mode to save resources.
 - **Automatic File Detection** — Vector store rebuilds when source files change.
 - **Beautiful Dark UI** — Modern React frontend with real-time chat.
+
+## Screenshots
+
+### Chat Interface with Document Retrieval
+![Overall RAG chat application](./docs/RAG%20example.png)
+
+*The main chat interface showing RAG-augmented queries with document sources and cross-chat capabilities.*
+
+### Advanced LLM Parameter Tuning
+![Custom model parameter tuning](./docs/tuning.png)
+
+*Fine-grained control over LLM generation with temperature, top-p, top-k, seed, and other advanced options.*
 
 ## Architecture
 
@@ -265,11 +289,34 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 - Disable RAG mode (`use_rag=false`) if you want faster generation without retrieval.
 - Use a smaller, faster model (e.g., `phi:2b`) for quick responses.
 
+## Why Local?
+
+### For Businesses & Organizations
+- **Compliance** — Meet GDPR, HIPAA, SOX, and other data residency requirements.
+- **Confidentiality** — Sensitive business documents never leave your infrastructure.
+- **Control** — No subscription fees, no API rate limits, no vendor dependence.
+- **Auditability** — Full visibility into what's happening with your data.
+
+### For Individuals
+- **Privacy** — Keep your personal documents, research, and ideas completely private.
+- **Cost** — No ongoing API bills. One-time hardware investment.
+- **Freedom** — Use your own models, tweak algorithms, run exactly as you want.
+- **Offline** — Works without internet; no connectivity required.
+
 ## Security
 
-- The system is fully local and offline—no data leaves your machine.
-- Optionally set `API_TOKEN` in `app/config.py` to require a Bearer token for API calls.
-- Chat files are stored unencrypted in `./chat_store/`; protect the directory if sensitive.
+- **The system is fully local and offline** — No data leaves your machine. Ever.
+- **No external dependencies** — Ollama and embeddings run locally; no API calls to third parties.
+- **Optional API token** — Set `API_TOKEN` in `app/config.py` to require a Bearer token for calls.
+- **Chat persistence** — Chats are stored as JSON files locally; protect the `./chat_store/` directory if sensitive.
+- **Vector store** — Your embeddings are stored in Chroma (SQLite) with full ownership.
+- **Source transparency** — Code is open source; you can audit, modify, and secure it yourself.
+
+**Important:** While the system is local, if you deploy this over a network:
+- Use HTTPS/TLS for transport security
+- Implement authentication/authorization
+- Restrict network access to trusted clients
+- Use VPN or private networks
 
 ## Future Enhancements
 
@@ -279,6 +326,38 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 - [ ] Hybrid search (BM25 + semantic)
 - [ ] Multi-user support with user accounts
 - [ ] Web UI deployment (Docker)
+- [ ] End-to-end encryption for network deployments
+- [ ] Audit logging for compliance
+
+## TODO
+
+### Containerization & Deployment
+- [ ] **Containerize Application** — Create Docker image for easy deployment
+  - Docker Compose setup for backend + frontend
+  - Support for docker-compose.yml with volumes for data persistence
+  - Multi-stage build for optimized image size
+  - Pre-built images for common Ollama models
+
+### Remote Access & Security
+- [ ] **Expose to Internet with Authentication**
+  - OAuth2 / OpenID Connect support
+  - Multi-user authentication with session management
+  - Role-based access control (RBAC) for different permission levels
+  - Rate limiting and DDoS protection
+  - HTTPS/TLS certificate management (Let's Encrypt integration)
+  - API key management for programmatic access
+
+### Advanced Features
+- [ ] **Document Management** — UI for uploading/deleting/managing documents without restart
+- [ ] **Model Switching** — UI to switch between different Ollama models on-the-fly
+- [ ] **Search Analytics** — Track which queries are most common, document popularity
+- [ ] **Export Capabilities** — Export chats as markdown/PDF, export vector DB
+
+### Infrastructure
+- [ ] **Kubernetes Support** — Helm charts for K8s deployment
+- [ ] **Database Migration** — Support PostgreSQL/MySQL as alternative to SQLite
+- [ ] **Backup & Restore** — Automated backup of vector store and chats
+- [ ] **Monitoring** — Prometheus metrics, health checks, logging aggregation
 
 ## License
 
