@@ -2,6 +2,8 @@
 
 A fully self-hosted, offline RAG (Retrieval-Augmented Generation) chat application built with LangChain, Ollama, and React. Query your personal documents without sending data to the cloud.
 
+This project is still in early stages of development, expect the associated tedium that comes with this. I have tried to provide accurate steps to utilize this code, but it is still in a "dev" oriented usage in its current build. Eventually it will be simply hosting it on a homelab or computer of choice and simply connecting to it offline or online via private hosting along with a plethora of customization.
+
 **Your data. Your control. Your privacy.**
 
 ## 🔒 Privacy & Control First
