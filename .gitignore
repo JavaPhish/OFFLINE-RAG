@@ -60,6 +60,11 @@ data/
 uvicorn.log
 *.log
 
+# Debug & test files (local testing only)
+test_*.py
+check_*.py
+
+
 # OS
 Thumbs.db
 .DS_Store
