@@ -31,12 +31,12 @@ This project is still in early stages of development, expect the associated tedi
 ## Screenshots
 
 ### Chat Interface with Document Retrieval
-![Overall RAG chat application](./docs/images/RAG%20example.png)
+![Overall RAG chat application](./docs/RAG%20example.png)
 
 *The main chat interface showing RAG-augmented queries with document sources and cross-chat capabilities.*
 
 ### Advanced LLM Parameter Tuning
-![Custom model parameter tuning](./docs/images/tuning.png)
+![Custom model parameter tuning](./docs/tuning.png)
 
 *Fine-grained control over LLM generation with temperature, top-p, top-k, seed, and other advanced options that paid mass market LLMs would not often allow for.*
 
