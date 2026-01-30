@@ -63,6 +63,7 @@ uvicorn.log
 # Debug & test files (local testing only)
 test_*.py
 check_*.py
+offline_rag.py
 
 
 # OS
