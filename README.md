@@ -354,14 +354,11 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ### Advanced Features
 - [ ] **Document Management** — UI for uploading/deleting/managing documents without restart
 - [ ] **Model Switching** — UI to switch between different Ollama models on-the-fly
-- [ ] **Search Analytics** — Track which queries are most common, document popularity
 - [ ] **Export Capabilities** — Export chats as markdown/PDF, export vector DB
 
 ### Infrastructure
-- [ ] **Kubernetes Support** — Helm charts for K8s deployment
 - [ ] **Database Migration** — Support PostgreSQL/MySQL as alternative to SQLite
 - [ ] **Backup & Restore** — Automated backup of vector store and chats
-- [ ] **Monitoring** — Prometheus metrics, health checks, logging aggregation
 
 ## License
 
