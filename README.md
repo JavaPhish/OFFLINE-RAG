@@ -40,6 +40,37 @@ This project is still in early stages of development, expect the associated tedi
 
 *Fine-grained control over LLM generation with temperature, top-p, top-k, seed, and other advanced options that paid mass market LLMs would not often allow for.*
 
+## Technology Stack
+
+### Backend
+- **FastAPI** — High-performance Python web framework for building the REST API
+- **LangChain** — Orchestration framework for RAG pipelines and document processing
+- **Chroma** — Vector database for semantic search with SQLite persistence
+- **SentenceTransformer** (all-MiniLM-L6-v2) — Lightweight, local embeddings (no API calls)
+- **pypdf** — PDF text extraction for document ingestion
+- **Ollama** — Local LLM runtime (supports gemma3, llama2, phi, and 100+ open-source models)
+
+### Frontend
+- **React 18** — Modern UI framework with hooks and concurrent features
+- **Vite** — Ultra-fast build tool and dev server (instant HMR)
+- **Vanilla CSS** — No framework dependencies; custom dark theme
+
+### Infrastructure
+- **Python 3.10+** — Backend runtime
+- **Node.js 18+** — Frontend build and dev server
+- **SQLite** — Lightweight, file-based persistence for vector store and chats
+
+### Why These Technologies?
+
+| Component | Choice | Why |
+|-----------|--------|-----|
+| Vector DB | Chroma | Lightweight, local persistence, easy to deploy |
+| Embeddings | SentenceTransformer | Fast, accurate, runs locally (no API dependency) |
+| LLM Runtime | Ollama | Simple CLI, broad model support, easy to install |
+| Backend | FastAPI | Modern, fast, automatic OpenAPI docs, great async support |
+| Frontend | React + Vite | Reactive UI, minimal bundle size, excellent DX |
+| Text Split | LangChain | Production-tested RAG pipelines, handles edge cases |
+
 ## Architecture
 
 ```
