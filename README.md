@@ -35,7 +35,7 @@ This project is built with **data sovereignty** as the core principle:
 ### Advanced LLM Parameter Tuning
 ![Custom model parameter tuning](./docs/tuning.png)
 
-*Fine-grained control over LLM generation with temperature, top-p, top-k, seed, and other advanced options.*
+*Fine-grained control over LLM generation with temperature, top-p, top-k, seed, and other advanced options that paid mass market LLMs would not often allow for.*
 
 ## Architecture
 
@@ -337,6 +337,7 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
   - Support for docker-compose.yml with volumes for data persistence
   - Multi-stage build for optimized image size
   - Pre-built images for common Ollama models
+  - Add sections for custom context / system prompt controls for even more control over LLM performance and utility
 
 ### Remote Access & Security
 - [ ] **Expose to Internet with Authentication**
